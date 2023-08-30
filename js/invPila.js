@@ -62,3 +62,5 @@ function invert(stack){
     }
     return invStack;
 }
+const inv = invert(Books);
+inv.print();
