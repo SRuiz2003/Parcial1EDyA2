@@ -56,9 +56,13 @@ const book4 = {
 
 function invert(stack){
     const invStack = new Stack();
-    for(let i = -1; i<=stack.size()+1;i++){
+    const l = stack.size();
+    for(let i = 0; i<l;i++){
         let obj = stack.pop();
         invStack.push(obj);
     }
     return invStack;
 }
+
+const inv = invert(Books);
+inv.print();

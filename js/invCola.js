@@ -27,11 +27,21 @@ class Queue{
         return this.queue;
     }
 
-    invert(){
-        return this.queue.reverse();
+    pop(){
+        return this.queue.pop();
     }
 
 } 
+
+function invert(queue){
+    const invQueue = new Queue();
+    const l = queue.size();
+    for(let i = 0; i<l;i++){
+        let obj = queue.pop();
+        invQueue.enqueue(obj);
+    }
+    return invQueue;
+}
 
 const ATM = new Queue();
 const p1 = {
@@ -59,5 +69,5 @@ const p4 = {
   ATM.enqueue(p3);
   ATM.enqueue(p4);
   ATM.print();
-  ATM.invert();
-  ATM.print();
+  const inv = invert(ATM);
+  
